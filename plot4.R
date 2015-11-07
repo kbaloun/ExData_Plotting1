@@ -8,15 +8,16 @@ target <- combine(d1,d2)
 target$srcDateAndTime <- paste(target$Date, target$Time)
 target$DateAndTime <- strptime(target$srcDateAndTime,"%d/%m/%Y %H:%M:%S")
 
-par(mfrow = c(2,2), mfcol = c(2,2), mar=c(4,4,2,1), oma=c(1,1,1,1), cra=8)
+par(mfrow = c(2,2), mfcol = c(2,2), mar=c(4,4,2,1), oma=c(1,1,1,1), cex.axis=0.75, cex.lab=0.75)
 
 with(target, {
     par(oma=c(1,1,1,1))
     plot(target$DateAndTime,target$Global_active_power, type="n", xlab="", ylab="Global Active Power")
     lines(target$DateAndTime,target$Global_active_power)
+    par(ylog=TRUE)
     
     plot(target$DateAndTime, target$Sub_metering_1, type="n", xlab="", ylab="Energy Sub metering")
-    legend("topright", bty="n", lty=1, col = c("grey","blue","red"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+    legend("topright", bty="n", lty=1, cex=0.5, col = c("grey","blue","red"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
     par(col = 'black')
     lines(target$DateAndTime, target$Sub_metering_1)
     par(col = 'red')
@@ -26,6 +27,7 @@ with(target, {
     par(ylog=TRUE)
 
 
+#    par(col = 'black', ylog=FALSE, yaxp="234,246,7")
     par(col = 'black')
     plot(target$DateAndTime, target$Voltage, type="n", xlab="datetime", ylab="Voltage")
     lines(target$DateAndTime, target$Voltage)
