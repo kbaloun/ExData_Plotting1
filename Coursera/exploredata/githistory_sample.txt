@@ -1,0 +1,22 @@
+how did this repo get like this?
+
+  611  git remote add exp  https://github.com/kbaloun/ExData_Plotting1.git 
+  612  git pull remote
+  613  git pull exp
+  614  git pull exp master
+  615  ls
+  616  git status
+  617  git push
+  618  git push exp
+  619  git push --set-upstream exp master
+  620  git remote show -v
+  621  git remote show 
+  622  git remote -v show 
+  623  vi finalproj.R
+  624  mv ~/Downloads/exdata_data_NEI_data.zip .
+  625  unzip exdata_data_NEI_data.zip 
+  626  vi finalproj.R
+  627  pwd
+  628  git add finalproj.R 
+  629  git commit -m "initial stub" finalproj.R 
+  630  git push
